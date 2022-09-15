@@ -1,0 +1,5 @@
+-> if os.path.exists(fontFilePath): os.remove(fontFilePath) # delete the downloaded file if it couldn't be read by ttLib.TTFont()
+    - PermissionError: [WinError 5] Access is denied: 'C:/Users/DELL/Desktop/Font Detial/WebFontInUse/fonts\\'
+-> Solution:
+    import stat
+    Before calling os.remove, call os.chmod(file_name, stat.S_IWRITE)
